@@ -18,9 +18,9 @@
         "eslint": "eslint .",
         "eslintfix": "eslint --fix ."
     },
-    "homepage": "https://github.com/Adrianmaze/Mvrco",
+    "homepage": "https://github.com/Adrianmaze/Nikkita",
     "author": {
-        "name": "Mvrco"
+        "name": "Nikkita"
     },
     "collaborators": {
         "col1": "@KILLBOT",
@@ -28,10 +28,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Adrianmaze/Mvrco.git"
+        "url": "git+https://github.com/Adrianmaze/Nikkita.git"
     },
     "bugs": {
-        "url": "https://github.com/Adrianmaze/Mvrco/issues"
+        "url": "https://github.com/Adrianmaze/Nikkita/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
