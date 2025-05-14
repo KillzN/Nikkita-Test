@@ -3,19 +3,19 @@ const handler = async (m, { isOwner, isAdmin, conn, text, participants, args, co
     global.dfail('admin', m, conn);
     throw false;
   }
-
-  const pesan = args.join` `;
-  const oi = `── 𝙀𝙏𝙄𝙌𝙐𝙀𝙏𝘼𝙎:\n🩶🎙@`;
-  let teks = `*𝘽𝙪𝙚𝙣𝙤𝙨 𝙙𝙞𝙖𝙨, 𝙩𝙖𝙧𝙙𝙚𝙨,𝙣𝙤𝙘𝙝𝙚𝙨 𝙡𝙞𝙙𝙚𝙧𝙚𝙨 𝙙𝙚 𝙚𝙦𝙪𝙞𝙥𝙤𝙨, 𝙙𝙚𝙨𝙥𝙞𝙚𝙧𝙩𝙚𝙣🌤*\n\n *${oi}*\n`;
-
+  const encabezado = '𝘽𝙪𝙚𝙣𝙤𝙨 𝙙𝙞𝙖𝙨, 𝙩𝙖𝙧𝙙𝙚𝙨,𝙣𝙤𝙘𝙝𝙚𝙨 𝙡𝙞𝙙𝙚𝙧𝙚𝙨 𝙙𝙚 𝙚𝙦𝙪𝙞𝙥𝙤𝙨, 𝙙𝙚𝙨𝙥𝙞𝙚𝙧𝙩𝙚𝙣🌤\n\n';
+  const intro = ' ── 𝙀𝙏𝙄𝙌𝙐𝙀𝙏𝘼𝙎: \n';
+  let etiquetas = '';
   for (const mem of participants) {
-    teks += `@${mem.id.split('@')[0]} `;
+    etiquetas += `🩶🎙 @${mem.id.split('@')[0]}\n`;
   }
-
-  teks += `\n*└𝙄𝙜:𝙣𝙞𝙠𝙠𝙞𝟯𝟬.𝙛𝙛*`;
-  conn.sendMessage(m.chat, { text: teks.trim(), mentions: participants.map((a) => a.id) });
+  const pie = '└𝙄𝙜:𝙣𝙞𝙠𝙠𝙞𝟯𝟬.𝙛𝙛';
+  const mensaje = encabezado + intro + etiquetas + pie;
+  await conn.sendMessage(m.chat, {
+    text: mensaje,
+    mentions: participants.map((a) => a.id)
+  });
 };
-
 handler.help = ['tagall <mensaje>', 'invocar <mensaje>'];
 handler.tags = ['group'];
 handler.command = /^(tagall|invocar|marcar|todos|invocación|ta)$/i;
